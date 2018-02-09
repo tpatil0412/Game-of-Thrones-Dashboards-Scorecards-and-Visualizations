@@ -1,0 +1,2 @@
+# Game-of-Thrones-Dashboards-Scorecards-and-Visualizations
+Developed a family tree showing characters of major houses, dead or alive status, also portrayed character’s allegiance, and how he/ she died (if dead) using D3.js. Developed an interactive visualization of timeline showing major events and the death of characters using D3.js. Developed an interactive network visualization of battles of various houses using D3.js. Developed map of battles with the help of SVG using D3.js.
