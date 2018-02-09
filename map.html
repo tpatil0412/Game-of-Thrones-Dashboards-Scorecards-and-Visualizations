@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)http://arnicas.github.io/interactive-vis-course/Week13/animated_map_path.html -->
+<html class="gr__arnicas_github_io"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src='http://d3js.org/d3.v3.min.js'></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3-queue/3.0.5/d3-queue.min.js"></script><script src="http://d3js.org/topojson.v1.min.js"></script><script src="http://d3js.org/d3.geo.projection.v0.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/d3-geo-projection/0.2.16/d3.geo.projection.min.js"></script><script src="http://d3js.org/queue.v1.min.js"></script><script src="https://d3js.org/d3-array.v1.min.js"></script><script src="https://d3js.org/d3-geo.v1.min.js"></script><script src="https://d3js.org/d3-geo-projection.v1.min.js"></script>
+<style>
+
+#img{
+font-family: "Times New Roman", Georgia, Serif;
+font-size:28px;
+float:left;
+color:white;
+font-weight:bold;
+padding: 0px;
+margin:0px;
+
+}
+p{
+text-align:center
+padding:0px;
+margin:0;
+margin-left:auto;
+
+}
+#btn{
+display:inline-block;
+margin-left: 360px; 
+margin-bottom: 10px;
+float:right;
+
+}
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #1B1E20;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #C0BEB5;
+}
+
+.button:hover {background-color: #f2f4f7}
+
+.button:active {
+  background-color: #f2f4f7;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+
+</head><body data-gr-c-s-loaded="true" style="background:#7A6C50">	
+
+<div id="img">
+<p>GAME OF THRONES</p>
+
+</div>
+<div id="btn">
+<button class="button" onclick="myClick(this);">Season-1</button>
+<button class="button" onclick="myClick(this);">Season-2</button>
+<button class="button" onclick="myClick(this);">Season-3</button>
+<button class="button" onclick="myClick(this);">Season-4</button>
+<button class="button" onclick="myClick(this);">Season-5</button>
+<button class="button" onclick="myClick(this);">Season-6</button>
+</div>
+
+
+<div id="pathAnimation">	
+<script src="ned.js"></script>
+<script src="Catelyn.js"></script>
+<script src="robb.js"></script>
+<script src="Baelish.js"></script>
+<script src="Cersei.js"></script>
+<script src="Sansa.js"></script>
+<script src="Tyrion.js"></script>
+<script src="Jamie.js"></script>
+<script src="Arya.js"></script>
+<script src="Jon.js"></script>
+<script src="Daenerys.js"></script>
+<script src="Robert.js"></script>
+<script src="Renly.js"></script>
+<script src="Stannis.js"></script>
+<script src="Bran.js"></script>
+<script src="Drogo.js"></script>
+<script src="Brienne.js"></script>
+<script src="Ramsay.js"></script>
+
+</div>
+
+<script>
+function myClick(btn)
+{
+	Bran_click(btn);
+        Daenerys_click(btn);
+        Jon_click(btn);
+        Arya_click(btn);
+        Sansa_click(btn);
+        Baelish_click(btn);
+        Tyrion_click(btn);
+        Cersei_click(btn);
+        Jamie_click(btn);
+        Stannis_click(btn);
+        robb_click(btn);	
+        Catelyn_click(btn);
+        Renly_click(btn);
+        Ned_click(btn);
+        Robert_click(btn);
+        Drogo_click(btn);
+        Brienne_click(btn);
+        Ramsay_click(btn);
+        showevents(btn);
+}
+
+function showevents(btn) {
+      var button = d3.select(btn);
+	  document.getElementsByName("season1events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+	  document.getElementsByName("season2events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+	  document.getElementsByName("season3events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+	  document.getElementsByName("season4events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+	  document.getElementsByName("season5events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+	  document.getElementsByName("season6events").forEach(function(circle){
+		 circle.style.display = "none"; 
+	  });
+	  
+      
+	  if (button.text() == "Season-1") {
+      document.getElementsByName("season1events").forEach(function(circle){
+		 circle.style.display = ""; 
+		 
+	  });}
+	  else if (button.text() == "Season-2") {
+	  
+      document.getElementsByName("season2events").forEach(function(circle){
+		 circle.style.display = ""; 
+	  });}
+	  
+	  else if (button.text() == "Season-3") {
+	  
+      document.getElementsByName("season3events").forEach(function(circle){
+		 circle.style.display = ""; 
+	  });}
+	  
+	  else if (button.text() == "Season-4") {
+	  
+      document.getElementsByName("season4events").forEach(function(circle){
+		 circle.style.display = ""; 
+	  });}
+	  
+	  else if (button.text() == "Season-5") {
+	  
+      document.getElementsByName("season5events").forEach(function(circle){
+		 circle.style.display = ""; 
+	  });}
+	  
+	  else if (button.text() == "Season-6") {
+	  
+      document.getElementsByName("season6events").forEach(function(circle){
+		 circle.style.display = ""; 
+	  });}
+        
+}
+
+</script>
+
+<style>
+.st1 {
+  fill: #B6DCF5;
+  stroke: #777777;
+}
+.journey{
+  fill: none;
+  stroke: #000;
+  stroke-width: 4;
+  stroke-dasharray: 4px,8px;
+}
+
+circle {
+  stroke: #fff;
+  stroke-width: 3px;
+}
+.st0{fill:#1B1E20;}
+.st1{fill:#C0BEB5;}
+.st2{fill:#7A6C50;}
+.st3{fill:#88795B;}
+.st4{fill:#8F856A;}
+.st5{fill:#4B4231;}
+.st6{fill:#58513E;}
+.line{
+fill:none;
+
+</style>
+
+</body>
+</html>
